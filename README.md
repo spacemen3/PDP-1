@@ -13,4 +13,4 @@ To play Spacewar on your Pocket, please use [this guide](https://www.analogue.co
 ## Credits
 This core is released under the [MIT License](https://github.com/spacemen3/PDP-1/blob/main/LICENSE).
 
-The CPU used in this core is credited to https://github.com/MiSTer-devel/PDP1_MiSTer
+This is a port of the [PDP1_MiSTer](https://github.com/MiSTer-devel/PDP1_MiSTer/) core designed by [Hrvoje Čavrak](https://github.com/hrvach) for the [MiSTer FPGA platform](https://mister-devel.github.io/MkDocs_MiSTer/).
