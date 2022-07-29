@@ -1,0 +1,162 @@
+<session jtag_chain="USB-Blaster [USB-0]" jtag_device="@1: 5CE(BA4|FA4) (0x02B050DD)" sof_file="../output_files/ap_core.sof">
+  <display_tree gui_logging_enabled="0">
+  </display_tree>
+  <mnemonics>
+    <table name="rx_latch_idx_table" width="8">
+      <symbol name="0000" value="00000001"/>
+      <symbol name="0001" value="00000010"/>
+      <symbol name="0010" value="00000100"/>
+      <symbol name="0011" value="00001000"/>
+      <symbol name="0100" value="00010000"/>
+      <symbol name="0101" value="00100000"/>
+      <symbol name="0110" value="01000000"/>
+      <symbol name="0111" value="10000000"/>
+    </table>
+    <table name="rx_latch_idx_table (1)" width="4">
+      <symbol name="000" value="0001"/>
+      <symbol name="001" value="0010"/>
+      <symbol name="010" value="0100"/>
+      <symbol name="011" value="1000"/>
+    </table>
+    <table name="state_table" width="5">
+      <symbol name="ST_ADDR_0" value="00001"/>
+      <symbol name="ST_READ_0" value="00010"/>
+      <symbol name="ST_RESET" value="00100"/>
+      <symbol name="ST_WRITE_0" value="01000"/>
+      <symbol name="ST_WRITE_1" value="10000"/>
+    </table>
+    <table name="state_table (1)" width="4">
+      <symbol name="ST_IDLE" value="0001"/>
+      <symbol name="ST_RESET" value="0010"/>
+      <symbol name="ST_WRITE32_0" value="0100"/>
+      <symbol name="ST_WRITE32_1" value="1000"/>
+    </table>
+    <table name="state_table (2)" width="6">
+      <symbol name="0000" value="000001"/>
+      <symbol name="0001" value="000010"/>
+      <symbol name="0010" value="000100"/>
+      <symbol name="0011" value="001000"/>
+      <symbol name="0100" value="010000"/>
+      <symbol name="0101" value="100000"/>
+    </table>
+    <table name="tr_state_table" width="3">
+      <symbol name="0000" value="001"/>
+      <symbol name="0001" value="010"/>
+      <symbol name="0010" value="100"/>
+    </table>
+    <table name="state_table (4)" width="4">
+      <symbol name="0000" value="0001"/>
+      <symbol name="0001" value="0010"/>
+      <symbol name="0010" value="0100"/>
+      <symbol name="0011" value="1000"/>
+    </table>
+    <table name="tr_state_table (1)" width="6">
+      <symbol name="0000" value="000001"/>
+      <symbol name="0001" value="000010"/>
+      <symbol name="0010" value="000100"/>
+      <symbol name="0011" value="001000"/>
+      <symbol name="0100" value="010000"/>
+      <symbol name="0101" value="100000"/>
+    </table>
+    <table name="state_table (5)" width="6">
+      <symbol name="0000" value="000001"/>
+      <symbol name="0001" value="000010"/>
+      <symbol name="0010" value="000100"/>
+      <symbol name="0011" value="001000"/>
+      <symbol name="0100" value="010000"/>
+      <symbol name="0101" value="100000"/>
+    </table>
+    <table name="state_table (7)" width="5">
+      <symbol name="idle" value="00001"/>
+      <symbol name="write_1" value="00010"/>
+      <symbol name="write_2" value="00100"/>
+      <symbol name="write_3" value="01000"/>
+      <symbol name="write_4" value="10000"/>
+    </table>
+    <table name="nRIM_state_table" width="2">
+      <symbol name="000" value="01"/>
+      <symbol name="001" value="10"/>
+    </table>
+    <table name="state_table (8)" width="5">
+      <symbol name="idle" value="00001"/>
+      <symbol name="write_1" value="00010"/>
+      <symbol name="write_2" value="00100"/>
+      <symbol name="write_3" value="01000"/>
+      <symbol name="write_4" value="10000"/>
+    </table>
+    <table name="nRIM_state_table (1)" width="2">
+      <symbol name="000" value="01"/>
+      <symbol name="001" value="10"/>
+    </table>
+    <table name="tape_state_table" width="12">
+      <symbol name="idle" value="000000000001"/>
+      <symbol name="rim_data_1" value="000000000010"/>
+      <symbol name="rim_data_2" value="000000000100"/>
+      <symbol name="rim_data_3" value="000000001000"/>
+      <symbol name="rim_idle" value="000000010000"/>
+      <symbol name="tape_address_1" value="000000100000"/>
+      <symbol name="tape_address_2" value="000001000000"/>
+      <symbol name="tape_command_s" value="000010000000"/>
+      <symbol name="tape_data_1" value="000100000000"/>
+      <symbol name="tape_data_2" value="001000000000"/>
+      <symbol name="tape_data_3" value="010000000000"/>
+      <symbol name="tape_process" value="100000000000"/>
+    </table>
+    <table name="cpu_state_table" width="4">
+      <symbol name="00" value="0001"/>
+      <symbol name="CPU_boot" value="0010"/>
+      <symbol name="CPU_stall" value="0100"/>
+      <symbol name="CPU_stall_count" value="1000"/>
+    </table>
+    <table name="pixel_state_table" width="5">
+      <symbol name="0000" value="00001"/>
+      <symbol name="0001" value="00010"/>
+      <symbol name="0010" value="00100"/>
+      <symbol name="0011" value="01000"/>
+      <symbol name="0100" value="10000"/>
+    </table>
+    <table name="video_state_table" width="5">
+      <symbol name="000" value="00001"/>
+      <symbol name="CPU_restart" value="00010"/>
+      <symbol name="CPU_stalled" value="00100"/>
+      <symbol name="Clear_image" value="01000"/>
+      <symbol name="Process_fifo" value="10000"/>
+    </table>
+    <table name="cpu_state_table (1)" width="4">
+      <symbol name="00" value="0001"/>
+      <symbol name="CPU_boot" value="0010"/>
+      <symbol name="CPU_stall" value="0100"/>
+      <symbol name="CPU_stall_count" value="1000"/>
+    </table>
+    <table name="save_state_system_table" width="8">
+      <symbol name="0000" value="00000001"/>
+      <symbol name="load_state_ack" value="00000010"/>
+      <symbol name="load_state_process" value="00000100"/>
+      <symbol name="load_state_process_write" value="00001000"/>
+      <symbol name="load_state_recover" value="00010000"/>
+      <symbol name="save_state_ack" value="00100000"/>
+      <symbol name="save_state_process" value="01000000"/>
+      <symbol name="save_state_wait" value="10000000"/>
+    </table>
+  </mnemonics>
+  <static_plugin_mnemonics/>
+  <global_info>
+    <single attribute="active instance" value="0"/>
+    <single attribute="config widget visible" value="1"/>
+    <single attribute="data log widget visible" value="0"/>
+    <single attribute="hierarchy widget visible" value="0"/>
+    <single attribute="instance widget visible" value="1"/>
+    <single attribute="jtag widget visible" value="1"/>
+    <single attribute="lock mode" value="0"/>
+    <multi attribute="column width" size="23" value="34,34,444,74,68,78,95,96,98,98,88,88,110,101,101,101,101,101,101,101,101,107,114"/>
+    <multi attribute="frame size" size="2" value="1920,1017"/>
+    <multi attribute="jtag widget size" size="2" value="348,135"/>
+  </global_info>
+  <instance enabled="true" entity_name="sld_signaltap" is_auto_node="yes" name="auto_signaltap_0" source_file="sld_signaltap.vhd">
+    <node_ip_info instance_id="0" mfg_id="110" node_id="0" version="6"/>
+    <position_info>
+      <single attribute="setup vertical scroll position" value="0"/>
+      <single attribute="setup horizontal scroll position" value="0"/>
+    </position_info>
+  </instance>
+</session>
