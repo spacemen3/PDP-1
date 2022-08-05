@@ -743,7 +743,6 @@ set_global_assignment -name ALLOW_ANY_RAM_SIZE_FOR_RECOGNITION ON
 set_global_assignment -name ALLOW_ANY_ROM_SIZE_FOR_RECOGNITION ON
 set_global_assignment -name ALLOW_ANY_SHIFT_REGISTER_SIZE_FOR_RECOGNITION ON
 set_global_assignment -name VERILOG_FILE apf/common.v
-set_global_assignment -name MIF_FILE "core/PDP-1/console_bg.mif"
 set_global_assignment -name VERILOG_FILE "core/PDP-1/pdp1_vga_crt.v"
 set_global_assignment -name VERILOG_FILE "core/PDP-1/memory.v"
 set_global_assignment -name VERILOG_FILE "core/PDP-1/cpu.v"

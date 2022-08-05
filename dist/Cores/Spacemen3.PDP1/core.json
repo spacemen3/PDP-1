@@ -1,0 +1,34 @@
+{
+    "core": {
+        "magic": "APF_VER_1",
+        "metadata": {
+            "platform_ids": ["pdp1"],
+            "shortname": "PDP1",
+            "description": "Spacewar! v3.1 1962",
+            "author": "Spacemen3",
+            "url": "https://github.com/spacemen3/PDP-1",
+            "version": "v3.1 - Sep. 24, 1962",
+            "date_release": "2022-07-23"
+        },
+        "framework": {
+            "target_product": "Analogue Pocket",
+            "version_required": "1.1",
+            "sleep_supported": true,
+            "dock": {
+                "supported": true,
+                "analog_output": false
+            },
+            "hardware": {
+                "link_port": false,
+                "cartridge_adapter": -1
+            }
+        },
+        "cores": [
+            {
+                "name": "default",
+                "id": 0,
+                "filename": "bitstream.rbf_r"
+            }
+        ]
+    }
+}

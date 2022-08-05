@@ -1,0 +1,37 @@
+{
+    "data": {
+        "magic": "APF_VER_1",
+		"data_slots": [
+				{
+					"name": "RIM",
+					"id": 101,
+					"required": true,
+					"parameters": 3,
+					"filename": "spacewar3.1.bin",
+					"size_exact": 0,
+					"size_maximum": 131072,
+					"address": "0x00000000"
+				},
+				{
+					"name": "CLUT",
+					"id": 102,
+					"required": true,
+					"parameters": 3,
+					"filename": "Colour_LUT.clut",
+					"size_exact": 0,
+					"size_maximum": 131072,
+					"address": "0x10000000"
+				},
+				{
+					"name": "Config",
+					"id": 103,
+					"required": true,
+					"parameters": 3,
+					"filename": "config.cfg",
+					"size_exact": 0,
+					"size_maximum": 131072,
+					"address": "0x40000000"
+				}
+		]
+    }
+}
