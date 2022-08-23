@@ -8,7 +8,11 @@
 // laws, including, but not limited to, U.S. copyright law. All rights are
 // reserved. By using the APF code you are agreeing to the terms of the End User
 // License Agreement (“EULA”) located at [https://www.analogue.link/pocket-eula]
-// and incorporated herein by reference.
+// and incorporated herein by reference. To the extent any use of the APF requires 
+// application of the MIT License or the GNU General Public License and terms of 
+// this APF Software License Agreement and EULA are inconsistent with such license, 
+// the applicable terms of the MIT License or the GNU General Public License, as 
+// applicable, will prevail.
 
 // THE SOFTWARE IS PROVIDED "AS-IS" AND WE EXPRESSLY DISCLAIM ANY IMPLIED
 // WARRANTIES TO THE FULLEST EXTENT PROVIDED BY LAW, INCLUDING BUT NOT LIMITED TO,
@@ -31,7 +35,7 @@
 // FULLEST EXTENT PERMITTED BY APPLICABLE LAW.
 //
 // pad controller
-// 2020-08-10 Analogue - started
+// 2020-08-17 Analogue
 //
 
 module io_pad_controller (

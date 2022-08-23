@@ -6,7 +6,7 @@
 					"name": "RIM",
 					"id": 101,
 					"required": true,
-					"parameters": 3,
+					"parameters": 2,
 					"filename": "spacewar3.1.bin",
 					"size_exact": 0,
 					"size_maximum": 131072,
@@ -17,20 +17,13 @@
 					"id": 102,
 					"required": true,
 					"parameters": 3,
-					"filename": "Colour_LUT.clut",
+					"filename": "Default_LUT.clut",
 					"size_exact": 0,
 					"size_maximum": 131072,
-					"address": "0x10000000"
-				},
-				{
-					"name": "Config",
-					"id": 103,
-					"required": true,
-					"parameters": 3,
-					"filename": "config.cfg",
-					"size_exact": 0,
-					"size_maximum": 131072,
-					"address": "0x40000000"
+					"address": "0x10000000",
+					"extensions": [
+						"clut"
+					]
 				}
 		]
     }

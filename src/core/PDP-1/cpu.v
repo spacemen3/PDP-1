@@ -207,6 +207,7 @@ task execute_instruction;
     input [0:0] indirect_addr;
     input [17:0] instruction;
     input [17:0] operand;
+	 reg	 [5:0]	sense_switches_select;
 begin
    PREV_IR <= IR;
    
@@ -424,7 +425,8 @@ begin
                          +------------------------------------- invert skip
       */
       i_skp:
-      begin    
+      begin  
+			sense_switches_select = sense_switches >> instruction[5:3] - 1;
          SKIP_FLAG = (
                (instruction[6]   && AC == 0)                                    /* Skip on ZERO Accumulator      (sza) */
             || (instruction[7]   && AC[17] == 0)                                /* Skip on Plus Accumulator      (spa) */
@@ -435,8 +437,11 @@ begin
             || (|instruction[2:0] && ~&instruction[2:0] && PF[instruction[2:0]] == 0)         /* Skip on ZERO Program Flag     (szf) */
             || (instruction[2:0] == 3'b111 && PF == 0)                          /* Skip on ZERO Program Flag all (szf) */
             
-            || (|instruction[5:3] && ~&instruction[5:3] && sense_switches[instruction[5:3]] == 0)        /* Skip on ZERO Switch addr 1-6   (szs) */
-            || (instruction[5:3] == 3'b111 && sense_switches == 0)                          /* Skip on ZERO Switch  addr 7   (szs) */
+            || ( |instruction[5:3] && 
+					 ~&instruction[5:3] && 
+					 sense_switches_select[0] == 0) 
+					   //((sense_switches[instruction[5:3]]) == 0))        						/* Skip on ZERO Switch addr 1-6   (szs) */
+            || (instruction[5:3] == 3'b111 && sense_switches == 0)               /* Skip on ZERO Switch  addr 7   (szs) */
             );
             
          if (instruction[12] ^ SKIP_FLAG) /* If 6-th bit (DEC notation) is 1 and skip flag 0, or vice-versa */

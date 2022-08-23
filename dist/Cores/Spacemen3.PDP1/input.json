@@ -4,61 +4,21 @@
         "controllers": [
             {
                 "type": "default",
-                "map_analog_to_dpad": true,
                 "mappings": [
                     {
-                        "D-Pad Up": "pad1_d_up"
+                        "id": 0,
+                        "name": "Shoot Missile",
+                        "key": "pad_btn_a"
                     },
                     {
-                        "D-Pad Down": "pad1_d_down"
+                        "id": 1,
+                        "name": "Thrust",
+                        "key": "pad_btn_b"
                     },
                     {
-                        "D-Pad Left": "pad1_d_left"
-                    },
-                    {
-                        "D-Pad Right": "pad1_d_right"
-                    },
-                    {
-                        "A": "pad1_btn_b"
-                    },
-                    {
-                        "B": "pad1_btn_a"
-                    },
-                    {
-                        "Start": "pad1_btn_start"
-                    },
-                    {
-                        "Select": "pad1_btn_back"
-                    }
-                ]
-            },
-            {
-                "type": "default",
-                "map_analog_to_dpad": true,
-                "mappings": [
-                    {
-                        "D-Pad Up": "key1_scan_E048"
-                    },
-                    {
-                        "D-Pad Down": "key1_scan_E050"
-                    },
-                    {
-                        "D-Pad Left": "key1_scan_E04B"
-                    },
-                    {
-                        "D-Pad Right": "key1_scan_E04D"
-                    },
-                    {
-                        "A": "key1_scan_002D"
-                    },
-                    {
-                        "B": "key1_scan_002C"
-                    },
-                    {
-                        "Start": "key1_scan_001F"
-                    },
-                    {
-                        "Select": "key1_scan_001E"
+                        "id": 2,
+                        "name": "Warp",
+                        "key": "pad_btn_y"
                     }
                 ]
             }

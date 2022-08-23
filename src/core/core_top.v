@@ -292,6 +292,8 @@ wire [17:0]  IR_OUT;
 reg [7:0]   IOSTA_IN;
 wire [7:0] IOSTA_OUT;
 
+reg [31:0]  	fuctions_bridge_rd_data;
+
 
 
 reg [17:0]  	AC_OUT_REG;
@@ -354,7 +356,9 @@ always @(*) begin
 	32'hF8xxxxxx: begin
 		bridge_rd_data <= cmd_bridge_rd_data;
 	end
-
+	32'h4000xxxx: begin
+		bridge_rd_data <= fuctions_bridge_rd_data;
+	end
 
 	default : begin
 		bridge_rd_data <= bridge_rd_data_buf;
@@ -418,6 +422,17 @@ always @(posedge clk_74a or negedge reset_internal_n) begin
 			8'h04	: trail_len 		<= bridge_wr_data[2:0];
 			8'h08	: blur_on 			<= bridge_wr_data[0];
 			8'h0C	: sense_switches 	<= bridge_wr_data[5:0];
+		endcase
+	end
+end
+
+always @(posedge clk_74a) begin
+	if (bridge_rd) begin
+		case (bridge_addr[15:0])
+			16'h00	: fuctions_bridge_rd_data <= mag_ships;
+			16'h04	: fuctions_bridge_rd_data <= trail_len;
+			16'h08	: fuctions_bridge_rd_data <= blur_on;
+			16'h0C	: fuctions_bridge_rd_data <= sense_switches;
 		endcase
 	end
 end
@@ -603,7 +618,7 @@ pdp1_vga_crt type30_crt(
 	.pixel_type						(pixel_type),
 			
 	.mag_ships						(mag_ships),			// 1 = render ships in full resolution (no jaggies) 0 = scaled
-	.trail_len						(trail_len),			// trail lengths.  0 = longest, 7 = shortest
+	.trail_len						((trail_len)),			// trail lengths.  0 = longest, 7 = shortest
 	.blur_on							(blur_on),				// 1 = turn blurring on, 0 = turn it off
 			
 	.clk_74a							(clk_74a),

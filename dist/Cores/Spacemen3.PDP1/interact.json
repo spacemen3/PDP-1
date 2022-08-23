@@ -2,86 +2,110 @@
     "interact": {
         "magic": "APF_VER_1",
         "variables": [
-            {
-                "name": "Demo 32bit",
-                "id": 0,
-                "type": "number_u32",
-                "editable": true,
+			{
+                "name": "Trails",
+                "id": 1,
+                "type": "slider_u32",
+                "enabled": true,
+                "persist": true,
                 "address": "0x40000004",
+                "defaultval": 7,
+                "mask": "0xffffff00",
                 "graphical": {
-                    "default": 0,
+                    "signed": false,
                     "min": 0,
                     "max": 7,
                     "adjust_small": 1,
-                    "adjust_large": 1,
-                    "style": "bar"
+                    "adjust_large": 1
                 }
             },
-            {
-                "name": "Magnify Ships",
-                "id": 0,
-                "type": "radio",
-                "group": 100,
-                "editable": true,
+			{
+                "name": "Ship Mag",
+                "id": 2,
+                "type": "check",
+                "enabled": true,
+                "persist": true,
                 "address": "0x40000000",
-                "value": 1
-                }
+                "defaultval": 1,
+                "value": "0x1",
+                "mask": "0xFFFFFFFE"
+                
             },
-            {
-                "name": "Blur On",
-                "id": 0,
-                "type": "radio",
-                "group": 100,
-                "editable": true,
-                "address": "0x40000008",
-                "value": 1
-                }
-            },
-            {
-                "name": "Radio test2",
+			{
+                "name": "Trail Blur",
                 "id": 3,
-                "type": "radio",
-                "group": 100,
-                "editable": true,
-                "address": "0x00F0000A",
-                "value": 92
+                "type": "check",
+                "enabled": true,
+                "group": 101,
+                "persist": true,
+                "address": "0x40000008",
+                "defaultval": 0,
+                "value": "0x1",
+                "mask": "0xFFFFFFFE"
             },
-            {
-                "name": "Checkbox test",
+			{
+                "name": "Black Hole Off",
                 "id": 4,
                 "type": "check",
-                "editable": true,
-                "address": "0x00F00010",
-				"value": 64,
-				"value_unchecked": 128
-				
+                "enabled": true,
+                "group": 102,
+                "persist": true,
+                "address": "0x4000000C",
+                "defaultval": 0,
+                "value": "0x20",
+                "mask": "0xFFFFFFDF"
             },
-            {
-                "name": "Button test",
+			{
+                "name": "Black Hole Kills",
                 "id": 5,
-                "type": "button",
-                "editable": true,
-                "address": "0x00F00014",
-                "value": 64
+                "type": "check",
+                "enabled": true,
+                "group": 103,
+                "persist": true,
+                "address": "0x4000000C",
+                "defaultval": 0,
+                "value": "0x10",
+                "mask": "0xFFFFFFEF"
+            },
+			{
+                "name": "Background Off",
+                "id": 6,
+                "type": "check",
+                "enabled": true,
+                "group": 104,
+                "persist": true,
+                "address": "0x4000000C",
+                "defaultval": 0,
+                "value": "0x8",
+                "mask": "0xFFFFFFF7"
+            },
+			{
+                "name": "Low Gravity",
+                "id": 8,
+                "type": "check",
+                "enabled": true,
+                "group": 106,
+                "persist": true,
+                "address": "0x4000000C",
+                "defaultval": 0,
+                "value": "0x2",
+                "mask": "0xFFFFFFFD"
+            },
+			{
+                "name": "Ang. Momentum",
+                "id": 9,
+                "type": "check",
+                "enabled": true,
+                "group": 107,
+                "persist": true,
+                "address": "0x4000000C",
+                "defaultval": 0,
+                "value": "0x1",
+                "mask": "0xFFFFFFFE"
             }
         ],
         "messages": [
-            {
-                "id": 0,
-                "text": "Unknown error. Please reset core"
-            },
-            {
-                "id": 1,
-                "text": "Corrupt header. Will not pass BIOS check to boot."
-            },
-            {
-                "id": 2,
-                "text": "Unsupported mapper or MBC type."
-            },
-            {
-                "id": 3,
-                "text": "Generic unhelpful error message."
-            }
+           
         ]
     }
 }

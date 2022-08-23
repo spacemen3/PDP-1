@@ -292,7 +292,20 @@ module pdp1_vga_crt (
 	localparam startline = 12'd12;		// the line DE starts on, because we need to preroll for the first line buffer to fill
 	localparam cv_lowbit = 'd4;			// lowest bit to check on the vertical counter
 	
-	wire [9:0] phos_dim = ({6'h0, trail_len} + 10'h1); //calculate trail length
+	// trail length
+	reg [9:0] phos_dim;
+	always
+	case(trail_len[2:0])
+	3'h0 : phos_dim <= 10'h3fe;
+	3'h1 : phos_dim <= 10'd64;
+	3'h2 : phos_dim <= 10'd32;
+	3'h3 : phos_dim <= 10'd16;
+	3'h4 : phos_dim <= 10'd8;
+	3'h5 : phos_dim <= 10'd4;
+	3'h6 : phos_dim <= 10'd2;
+	3'h7 : phos_dim <= 10'd1;
+	endcase
+		
 	localparam phos_full = 10'h3ff;							// maximum brightness
 	
 	wire [31:0] pa_out [numbuffs-1:0];	// bram port A out
@@ -493,7 +506,13 @@ module pdp1_vga_crt (
 							// do phosphor dim, but only if we are marked "rendered" and we have not hit 0
 							// also, the first step is always 1 so that we will see the blue for 2 full frames, to prevent it flickering if it is being redrawn
 							6'b1xx_0x1 :	begin
-													pb_in[j] <= {1'b0, pa_out[j][30], (pa_out[j][29:20] - (&pa_out[j][29:20] ? 10'h1 : phos_dim)), pa_out[j][19:0]};
+													pb_in[j][31:30] <= {1'b0, pa_out[j][30]};
+													pb_in[j][19:0] <= pa_out[j][19:0];
+													casex({&pa_out[j][29:20], 1'b0, pa_out[j][29:20]} - {1'b0, phos_dim})
+													12'b1xxx_xxxx_xxxx : pb_in[j][29:20] <= 10'h3fe;								// subtract 1 on the first go
+													12'b00xx_xxxx_xxxx : pb_in[j][29:20] <= (pa_out[j][29:20] - phos_dim);	// no underflow
+													12'b01xx_xxxx_xxxx : pb_in[j][29:20] <= 10'h0;									// underflow
+													endcase
 													pb_wren[j] <= 1'b1;
 												end
 							
